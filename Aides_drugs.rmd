@@ -21,6 +21,8 @@ Three new preventative aides drugs were tested in clinical trials in 2015. The t
 #Methods 
 
 This Aides study is similar to the famous RV_144 Aides Trial in Thailand in 2009. The project is to analyze the three drugs for South Carolina, Korea and Central Africa being tested among female and male trial candidates. We will test the effect of the drugs on the individual sexes females and males, as well as both sexes together.
+Furthermore, we will use tigerstats and dplr to obtain barcharts,numerical results, inferential results by running quisquare test. 
+In the end we want to know if the sex of the participant has a correlation with the effects of the drugs. 
 
 # South Carolina
 
