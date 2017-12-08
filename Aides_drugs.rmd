@@ -24,23 +24,89 @@ This Aides study is similar to the famous RV_144 Aides Trial in Thailand in 2009
 Furthermore, we will use tigerstats and dplr to obtain barcharts,numerical results, inferential results by running quisquare test. 
 In the end we want to know if the sex of the participant has a correlation with the effects of the drugs. 
 
-# South Carolina
+#Results
+
+#Graphical Results
+
+# South carolina 
 
 We will subset the data by sex to see if the drug is sex specific.
 
+
+```{r}
+results<- xtabs(~infected + group, data =  Scarolina)
+barchartGC(results, type = "percent")
+```
+
+Based on the barchart above, the results indicate that the placebo and the drug both have about the same effect on both sex groups. There is about a 50%-50% effect from the drug and also about the same 50%-50% effect from the placebo. 
+
+```{r}
+scmales<- filter(Scarolina, sex == "M")
+resultsM<- result<- xtabs(~infected + group, data = scmales)
+barchartGC(resultsM, type = "percent")
+```
+The barchart above pulled out the percent of those infected and the non-infected males. Based on the results above the drug is not effecteive on males becasue more than 55% got aids on the drug and about 45% on the placebo got aids. The percent of the males who didn't get aids on the placebo was about 50% and those who got aids on the drug was about 49%. 
+
+```{r}
+scfemales<- filter(Scarolina, sex == "F")
+resultsF<- result<- xtabs(~infected + group, data = scfemales)
+barchartGC(resultsF, type = "percent")
+
+```
+
+Based on the barchart above the drug works on the females because less than 40% got aids on the drug and more than 60% got aids on the placebo. About 50% of those on the drug din't get aids and about 49% on the placebo didn't get aids. 
 
 # Central Africa
 
 We will subset the data by sex to see if the drug is sex specific.
 
+```{r}
+results<- xtabs(~infected + group, data =  cenAfrica)
+barchartGC(results, type = "percent")
+```
 
+Based on the barchart above, the data shows that about 47% of both sex groups got aids on the drug. More than 50% on the placebo got aids.Thus, the drug was about 47% effective on both sex groups. And about 50% on the drug and placebo didn't get aids. 
+
+```{r}
+cAmales<- filter(cenAfrica, sex == "M")
+resultsM<- result<- xtabs(~infected + group, data = cAmales)
+barchartGC(resultsM, type = "percent")
+```
+
+Based on the data represented above, slightly less than 50% of the drug was effective on males. The placebo was about 51% effective and of those who didn't get aids was 50%-50% for both on the drug and on the placebo.  
+
+```{r}
+cAfemales<- filter(cenAfrica, sex == "F")
+resultsF<- result<- xtabs(~infected + group, data = cAfemales)
+barchartGC(resultsF, type = "percent")
+```
+
+Based on the data represented above, the drug was 46% effective on females. 55% of those who took the placebo got aids and of those who didn't get aids was 50%-50% for both on the drug and on the placebo. Therefore the drug kinda worked. 
 
 # Korea
 
 We will subset the data by sex to see if the drug is sex specific.
 
+```{r}
+results<- xtabs(~infected + group, data =  korea)
+barchartGC(results, type = "percent")
+```
+
+Based on the data provided above, the drug was about 45% effective on the Koreans. The data indicates that 45% got aids and 56% on the placebo got aids. And of those who didn't get aids on the drug and the placebo were about 50%- 50%. 
+
+```{r}
+KoreaMales<- filter(korea, sex == "M")
+resultsM<- result<- xtabs(~infected + group, data = KoreaMales)
+barchartGC(resultsM, type = "percent")
+```
+
+Based on the data above, about 36% of those who took the drug got aids and more than 65% on the placebo got aids. In the group with no aids the percent shows about the same for thsoe on the drug and those who took the placebo, 50%-50%. Thus, the data indicates that the drug works on the Korean males. 
+
+```{r}
+KoreaFemales<- filter(korea, sex == "F")
+resultsF<- result<- xtabs(~infected + group, data = KoreaFemales)
+barchartGC(resultsF, type = "percent")
+```
 
 
-
-
-
+The data above shows that the females who took the drug got about 65% aids. And those on the placebo got about 37% aids. And of the females who didn't get aids was about 50%-50% for those who were on the placebo and on the drug. Based on this data, the drug didn't work on the females.  
