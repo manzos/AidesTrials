@@ -110,3 +110,58 @@ barchartGC(resultsF, type = "percent")
 
 
 The data above shows that the females who took the drug got about 65% aids. And those on the placebo got about 37% aids. And of the females who didn't get aids was about 50%-50% for those who were on the placebo and on the drug. Based on this data, the drug didn't work on the females.  
+
+#Numerical Results
+
+```{r}
+chisqtestGC(~infected + group, data = Scarolina)
+```
+
+ The null hypothesis is independent because both the placebo group and the Scarolina drug group counted for the same number 119.5. However, the observed count shows that 118 on the drug got aids and 121 on the placebo got aids. 
+
+```{r}
+chisqtestGC(~infected + group, data = cenAfrica)
+```
+
+The CenAfrica drug is independent becasue the observed results show that 101 of the group who took the drug was infected and 110 on the placebo were not infected. The null hypothesis reads that both the drug group and the placebo group were infected by 105.5 count.  
+
+```{r}
+chisqtestGC(~infected + group, data = korea)
+```
+
+The null hypothesis is independent from the observed count because the Korea group on the drug got aids by 103 count and those on the placebo were infected by 131 count. Based on our observations, the drug worked. 
+
+```{r}
+chisqtestGC(results, graph = TRUE)
+```
+
+#Inferential Results
+
+```{r}
+rowPerc(results)
+```
+
+The row percent shows that out of 100, the group who took the drug got aids by 44% and thsoe on the placebo got aids by 56%. The participants who didn't get aids was about 50%.
+
+```{r}
+rowPerc(resultsM)
+```
+
+From the male percent row, 33% of the drug group got aids and 67% on the placebo got aids. 
+Of thsoe who didn't get aids on the drug and the placebo was roughly about 50%. 
+
+```{r}
+rowPerc(resultsF)
+```
+
+From the female row percent, 65% on the drug got aids and 35% on the placebo got aids. Of those who didn't get aids, about 49.5% were in the count. 
+
+# Conclusion
+
+In conclusion, the graphical results show that the Korea drug is more effective than the other two drug by about 45%. The drug was more effective on the males than the females by  36%-64%. 
+In comparison to the SCaroliona results, the drug was only effective by about 50%. The drug was efefctive different between the males and the females group based on the resutls which show 58%- 40%. So, the drug was more effective on the females. 
+Based on the resutls on the CenAfrica results, the drug was only about 47% effective. And between the males and females group, the drug was 50%-47% effective. 
+
+I would recommend the Korean drug to a male more than the other two drugs. And we can see more or less the difference of the efefct of the drug based on the sex. 
+
+
